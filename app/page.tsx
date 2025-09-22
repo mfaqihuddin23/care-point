@@ -1,95 +1,85 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function Landing() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className="space-y-24">
+      {/* Hero */}
+      <section className="rounded-[32px] bg-gradient-to-b from-white to-mist px-8 py-16 text-center shadow-soft">
+        <h1 className="text-4xl md:text-5xl font-bold text-ink">
+          Transform <span className="text-accent">Healthcare</span> Efficiency
+          <br /> with Cutting-Edge Technology
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+          Manage patients, staff, finances, and more with our comprehensive, user-friendly system.
+        </p>
+        <div className="mt-6 flex justify-center gap-3">
+          <Link href="/auth" className="rounded-full bg-ink px-5 py-2 text-sm text-white">
+            Get Started
+          </Link>
+          <button className="rounded-full border px-5 py-2 text-sm">Watch a Demo</button>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Product */}
+      <section id="product" className="rounded-[32px] bg-white p-8 shadow-soft">
+        <h2 className="text-2xl font-bold">Product</h2>
+        <p className="mt-2 text-slate-600">Our platform modules and features.</p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl2 bg-mist p-5">Electronic Medical Record</div>
+          <div className="rounded-xl2 bg-mist p-5">Scheduling</div>
+          <div className="rounded-xl2 bg-mist p-5">Analytics</div>
+        </div>
+      </section>
+
+      {/* Service */}
+      <section id="service" className="rounded-[32px] bg-white p-8 shadow-soft">
+        <h2 className="text-2xl font-bold">Service</h2>
+        <p className="mt-2 text-slate-600">Implementation, training, and support plans.</p>
+        <ul className="mt-4 list-disc pl-6 text-slate-700 space-y-2">
+          <li>Onboarding & data migration</li>
+          <li>Customization & branding</li>
+          <li>Staff training</li>
+        </ul>
+      </section>
+
+      {/* Activity */}
+      <section id="activity" className="rounded-[32px] bg-white p-8 shadow-soft">
+        <h2 className="text-2xl font-bold">Activity</h2>
+        <p className="mt-2 text-slate-600">Recent updates and changelog.</p>
+        <div className="mt-4 space-y-3">
+          <div className="rounded-xl2 bg-mist p-4">v0.2 – Dashboard improvements</div>
+          <div className="rounded-xl2 bg-mist p-4">v0.1 – Initial release</div>
+        </div>
+      </section>
+
+      {/* Support */}
+      <section id="support" className="rounded-[32px] bg-white p-8 shadow-soft">
+        <h2 className="text-2xl font-bold">Support</h2>
+        <p className="mt-2 text-slate-600">Contact us form.</p>
+        <form className="mt-4 grid gap-4 max-w-lg mx-auto">
+          <input
+            type="text"
+            placeholder="Name"
+            className="rounded-lg border px-4 py-2"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <input
+            type="email"
+            placeholder="Email"
+            className="rounded-lg border px-4 py-2"
           />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <textarea
+            placeholder="Message"
+            className="rounded-lg border px-4 py-2"
+            rows={4}
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <button
+            type="submit"
+            className="rounded-full bg-accent px-5 py-2 text-sm text-white"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
     </div>
   );
 }
