@@ -7,7 +7,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-plus-jakarta-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-plus-jakarta-sans)', 'var(--font-satoshi)', 'system-ui', 'sans-serif'],
+        satoshi: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
+        jakarta: ['var(--font-plus-jakarta-sans)', 'system-ui', 'sans-serif'],
+      },
+      container: {
+        center: true,
+        screens: {
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1280px',
+        },
       },
       colors: {
         ink: '#1a1a1a',
@@ -35,6 +47,9 @@ module.exports = {
       },
       borderRadius: {
         'xl2': '1rem',
+      },
+      backgroundImage: {
+        'gradient-custom': 'linear-gradient(to bottom, #F6F6F6, #BECFD6)',
       }
     },
   },

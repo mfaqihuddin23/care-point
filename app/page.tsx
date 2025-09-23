@@ -12,18 +12,20 @@ import Link from "next/link";
  */
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-custom">
       <Navbar />
       
       {/* Hero section */}
-      <section className="px-8 py-16 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-ink leading-tight">
-          Transform <span className="text-accent">Healthcare</span> Efficiency
-          <br /> with Cutting-Edge Technology
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-          Manage patients, staff, finances, and more with our comprehensive, user-friendly system.
-        </p>
+      <section className="px-8 pt-[77px] text-center">
+        <div className="container flex flex-col items-center gap-[30px]">
+          <h1 className="text-4xl md:text-6xl font-bold font-satoshi text-[#121212] leading-tight max-w-[940px]">
+            Transform <span className="text-[#3490AA]">Healthcare</span> Efficiency
+            with Cutting-Edge Technology
+          </h1>
+          <p className="font-medium text-base text-slate-600 leading-[140%]">
+            Manage patients, staff, finances, and more with our comprehensive, user-friendly system.
+          </p>
+        </div>
 
         {/* CTA */}
         <div className="mt-8 flex justify-center gap-4">
