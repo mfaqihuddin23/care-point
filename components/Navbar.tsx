@@ -20,9 +20,9 @@ export default function Navbar() {
   return (
     <header className="mt-6 flex items-center justify-between rounded-2xl bg-white/90 px-5 py-3 shadow-soft">
       {/* Logo + link balik ke landing page */}
-      <Link href="/" className="flex items-center gap-2">
-        <img src="/logo.svg" alt="CarePoint" className="h-6" />
-        <span className="font-semibold">CarePoint</span>
+      <Link href="/" className="flex items-center">
+        <img src="/globe.svg" alt="CarePoint" className="w-8 h-8" />
+        <span className="font-bold text-[#121212]">CarePoint</span>
       </Link>
 
       {/* Menu nav hanya tampil kalau di landing page */}
