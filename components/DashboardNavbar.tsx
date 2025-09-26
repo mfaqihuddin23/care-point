@@ -7,43 +7,36 @@ export default function DashboardNavbar() {
 
   const navItems = [
     { href: "/dashboard", label: "Dashboard" },
-    { href: "/patient", label: "Patient" },
-    { href: "/doctors", label: "Doctors and Staff" },
-    { href: "/room", label: "Room" },
-    { href: "/medicine", label: "Medicine" },
-    { href: "/analytics", label: "Analitik" },
-    { href: "/inventory", label: "Inventory" },
+    { href: "/dashboard/patient", label: "Patient" },
+    { href: "/dashboard/doctors", label: "Doctors and Staff" },
+    { href: "/dashboard/room", label: "Room" },
+    { href: "/dashboard/medicine", label: "Medicine" },
+    { href: "/dashboard/analytics", label: "Analitik" },
+    { href: "/dashboard/inventory", label: "Inventory" },
   ];
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="px-6 py-4">
       <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-4">
-          <div className="relative w-[31px]">
-            <img src="/logo-brand-dashboard.svg" alt="" />
-          </div>
-          
-          {/* Navigation Tabs */}
-          <nav className="flex items-center space-x-8">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-black border-b-2 border-black pb-2"
-                      : "text-gray-600 hover:text-black"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
+        {/* Navigation Tabs */}
+        <nav className="flex items-center gap-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-normal transition-colors ${
+                  isActive
+                    ? "text-white bg-[#131313] rounded-full px-7 py-4"
+                    : "text-[#131313]/70 px-7 py-4 rounded-full hover:text-black"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
 
         {/* Right side icons and user profile */}
         <div className="flex items-center space-x-4">

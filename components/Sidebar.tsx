@@ -8,14 +8,14 @@ export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const menuItems = [
-    { href: "/", label: "Back", icon: "back" },
-    { href: "/share", label: "Share", icon: "share" },
-    { href: "/download", label: "Download", icon: "download" },
-    { href: "/favorite", label: "Favorite", icon: "star" },
-    { href: "/add", label: "Add", icon: "plus" },
-    { href: "/database", label: "Database", icon: "database" },
-    { href: "/chart", label: "Chart", icon: "chart" },
-    { href: "/info", label: "Info", icon: "info" },
+    { href: "/dashboard", label: "Back", icon: "back" },
+    { href: "/dashboard/patient", label: "Patient", icon: "patients" },
+    { href: "/dashboard/doctors", label: "Doctors", icon: "doctors" },
+    { href: "/dashboard/room", label: "Room", icon: "rooms" },
+    { href: "/dashboard/medicine", label: "Medicine", icon: "medicine" },
+    { href: "/dashboard/analytics", label: "Analytics", icon: "analytics" },
+    { href: "/dashboard/inventory", label: "Inventory", icon: "inventory" },
+    { href: "/dashboard/settings", label: "Settings", icon: "settings" },
   ];
 
   const getIcon = (iconName: string) => {
@@ -28,46 +28,47 @@ export default function Sidebar() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isCollapsed ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
           </svg>
         );
-      case "share":
+      case "patients":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
           </svg>
         );
-      case "download":
+      case "doctors":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
         );
-      case "star":
+      case "rooms":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         );
-      case "plus":
+      case "medicine":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
           </svg>
         );
-      case "database":
-        return (
-          <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-          </svg>
-        );
-      case "chart":
+      case "analytics":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
         );
-      case "info":
+      case "inventory":
         return (
           <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+        );
+      case "settings":
+        return (
+          <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         );
       default:
@@ -80,55 +81,107 @@ export default function Sidebar() {
   };
 
   return (
-    <div className={`${isCollapsed ? 'w-10' : 'w-20'} bg-cyan-100 flex flex-col items-center py-6 transition-all duration-300`}>
+    <div className={`${isCollapsed ? 'w-24' : 'w-48'} flex flex-col py-6 h-screen transition-[width] duration-300`}>
+      {/* Logo */}
+      <div className="px-3 mb-6">
+        <div className="flex items-center">
+          {/* Fixed icon container - prevents shifting */}
+          <div className="w-8 h-8 flex-shrink-0">
+            <img src="/logo-brand-dashboard.svg" alt="CarePoint" className="w-8 h-8" />
+          </div>
+          {/* Text label with opacity and max-width animation */}
+          <span 
+            className={`ml-3 text-lg font-bold text-gray-800 transition-[opacity,max-width] duration-300 overflow-hidden whitespace-nowrap ${
+              isCollapsed 
+                ? 'opacity-0 max-w-0' 
+                : 'opacity-100 max-w-32'
+            }`}
+          >
+            CarePoint
+          </span>
+        </div>
+      </div>
 
       {/* Navigation Menu */}
-      <nav className="flex flex-col items-center space-y-4 flex-1">
+      <nav className="flex flex-col space-y-4 px-3 flex-1">
         {menuItems.map((item) => {
           const isActive = pathname === item.href;
           const isBackButton = item.icon === "back";
           
           if (isBackButton) {
             return (
-              <button
-                key={item.href}
-                onClick={() => setIsCollapsed(!isCollapsed)}
-                className="w-12 h-12 rounded-full flex items-center justify-center transition-colors border-2 bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:text-gray-700"
-                title={isCollapsed ? "Show Sidebar" : "Hide Sidebar"}
-              >
-                {getIcon(item.icon)}
-              </button>
+              <div key={item.href} className="flex items-center">
+                {/* Fixed button container - prevents shifting */}
+                <button
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-colors border-2 bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:text-gray-700 flex-shrink-0"
+                  title={isCollapsed ? "Show Sidebar" : "Hide Sidebar"}
+                >
+                  {getIcon(item.icon)}
+                </button>
+                {/* Text label with opacity and max-width animation */}
+                <span 
+                  className={`ml-3 text-sm font-medium text-gray-700 transition-[opacity,max-width] duration-300 overflow-hidden whitespace-nowrap ${
+                    isCollapsed 
+                      ? 'opacity-0 max-w-0' 
+                      : 'opacity-100 max-w-24'
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </div>
             );
           }
           
-          if (isCollapsed) return null;
-          
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors border-2 ${
-                isActive
-                  ? "bg-white border-gray-300 text-gray-700"
-                  : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:text-gray-700"
-              }`}
-              title={item.label}
-            >
-              {getIcon(item.icon)}
-            </Link>
+            <div key={item.href} className="flex items-center">
+              {/* Fixed button container - prevents shifting */}
+              <Link
+                href={item.href}
+                className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors border-2 flex-shrink-0 ${
+                  isActive
+                    ? "bg-white border-gray-300 text-gray-700"
+                    : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:text-gray-700"
+                }`}
+                title={item.label}
+              >
+                {getIcon(item.icon)}
+              </Link>
+              {/* Text label with opacity and max-width animation */}
+              <span 
+                className={`ml-3 text-sm font-medium text-gray-700 transition-[opacity,max-width] duration-300 overflow-hidden whitespace-nowrap ${
+                  isCollapsed 
+                    ? 'opacity-0 max-w-0' 
+                    : 'opacity-100 max-w-24'
+                }`}
+              >
+                {item.label}
+              </span>
+            </div>
           );
         })}
       </nav>
 
-      {/* Audio Button */}
-      <div className="mt-auto">
-        {!isCollapsed && (
-          <button className="w-12 h-12 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center text-gray-600 hover:border-gray-300 hover:text-gray-700 transition-colors" title="Audio">
+      {/* Logout Button */}
+      <div className="mt-auto px-3">
+        <div className="flex items-center">
+          {/* Fixed button container - prevents shifting */}
+          <button className="w-12 h-12 rounded-full flex items-center justify-center transition-colors border-2 bg-white border-gray-200 text-gray-600 hover:border-red-300 hover:text-red-700 flex-shrink-0" title="Logout">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
           </button>
-        )}
+          {/* Text label with opacity and max-width animation */}
+          <span 
+            className={`ml-3 text-sm font-medium text-gray-700 transition-[opacity,max-width] duration-300 overflow-hidden whitespace-nowrap ${
+              isCollapsed 
+                ? 'opacity-0 max-w-0' 
+                : 'opacity-100 max-w-24'
+            }`}
+          >
+            Logout
+          </span>
+        </div>
       </div>
     </div>
   );
